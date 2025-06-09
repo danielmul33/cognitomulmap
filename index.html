@@ -855,6 +855,873 @@
             </section>
         </div>
 
+        <!-- Projects Page --><div style="background: rgba(248, 248, 248, 0.8); backdrop-filter: blur(10px); padding: 3rem; margin: 3rem 0; border: 1px solid rgba(224, 224, 224, 0.3); text-align: left;">
+                        <h3 style="font-family: 'Playfair Display', serif; font-size: 1.8rem; margin-bottom: 2rem; color: var(--primary-black); text-align: center;">Modelo de Inversión Exclusiva</h3>
+                        <p style="font-size: 1.1rem; line-height: 1.8; color: var(--medium-gray); margin-bottom: 2rem;">
+                            Aplica una deliberada <em>estrategia de escasez percibida</em>: solo un número muy limitado de camiones 
+                            se abre a la co-inversión, creando una aureola de exclusividad que magnetiza a aquellos inversores con 
+                            verdadera convicción. Al restringir intencionalmente la disponibilidad – muy al estilo de las casas de lujo 
+                            o series limitadas – Mul logra que cada participación se valore más. Esta sensación de oportunidad escasa y 
+                            valiosa genera urgencia y compromiso genuino: quienes suben a bordo no son simples especuladores, sino socios 
+                            alineados con la visión, dispuestos a recorrer la milla extra en conjunto.
+                        </p>
+                        <p style="font-size: 1.1rem<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Mul - Reality Architect. Un lugar privado, solo Mul lo entendería.">
+    <meta name="keywords" content="Reality Architect, Mul, Zeven Global, American Freight Movers, Cognito IA, Innova Escuela">
+    <meta name="author" content="Mul">
+    <title>Mul - Reality Architect</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+    
+    <!-- Open Graph Meta Tags -->
+    <meta property="og:title" content="Mul - Reality Architect">
+    <meta property="og:description" content="Un lugar privado, solo Mul lo entendería.">
+    <meta property="og:type" content="website">
+    
+    <style>
+        :root {
+            --primary-black: #0a0a0a;
+            --primary-white: #fefefe;
+            --accent-gold: #b8860b;
+            --accent-steel: #708090;
+            --light-gray: #f8f8f8;
+            --medium-gray: #666;
+            --border-gray: #e0e0e0;
+            --glass-bg: rgba(254, 254, 254, 0.1);
+            --shadow-light: 0 8px 32px rgba(0, 0, 0, 0.1);
+            --shadow-medium: 0 15px 40px rgba(0, 0, 0, 0.15);
+            --gradient-primary: linear-gradient(135deg, #0a0a0a 0%, #2a2a2a 100%);
+            --gradient-accent: linear-gradient(135deg, #b8860b 0%, #708090 100%);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            line-height: 1.6;
+            color: var(--primary-black);
+            background: var(--primary-white);
+            overflow-x: hidden;
+        }
+
+        /* Navigation */
+        .nav-container {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            background: rgba(254, 254, 254, 0.95);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            z-index: 1000;
+            border-bottom: 1px solid rgba(224, 224, 224, 0.3);
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .nav-container.scrolled {
+            background: rgba(254, 254, 254, 0.98);
+            box-shadow: var(--shadow-light);
+            border-bottom: 1px solid var(--border-gray);
+        }
+
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1rem 2rem;
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        .logo-container {
+            display: flex;
+            align-items: center;
+        }
+
+        .brand {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: var(--primary-black);
+            text-decoration: none;
+            transition: all 0.3s ease;
+            position: relative;
+        }
+
+        .brand:hover {
+            color: var(--accent-gold);
+            transform: translateY(-1px);
+        }
+
+        .nav-menu {
+            display: flex;
+            list-style: none;
+            gap: 1.5rem;
+        }
+
+        .nav-item {
+            position: relative;
+        }
+
+        .nav-link {
+            text-decoration: none;
+            color: var(--primary-black);
+            font-weight: 500;
+            font-size: 0.9rem;
+            letter-spacing: 0.5px;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            position: relative;
+            padding: 0.7rem 0.8rem;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+
+        .nav-link::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: var(--glass-bg);
+            backdrop-filter: blur(10px);
+            border-radius: 4px;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+
+        .nav-link:hover::before,
+        .nav-link.active::before {
+            opacity: 1;
+        }
+
+        .nav-link:hover,
+        .nav-link.active {
+            color: var(--accent-gold);
+            transform: translateY(-1px);
+        }
+
+        /* Menu Toggle */
+        .menu-toggle {
+            display: none;
+            flex-direction: column;
+            cursor: pointer;
+            padding: 0.5rem;
+            z-index: 1001;
+        }
+
+        .menu-bar {
+            width: 25px;
+            height: 2px;
+            background: var(--primary-black);
+            margin: 3px 0;
+            transition: 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            border-radius: 2px;
+        }
+
+        /* Page Content */
+        .page-content {
+            margin-top: 80px;
+            min-height: calc(100vh - 80px);
+        }
+
+        .page {
+            display: none;
+            opacity: 0;
+            animation: fadeIn 0.6s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+        }
+
+        .page.active {
+            display: block;
+        }
+
+        /* Hero Section */
+        .hero-section {
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            background: linear-gradient(135deg, var(--primary-white) 0%, var(--light-gray) 100%);
+            overflow: hidden;
+        }
+
+        .geometric-bg {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            overflow: hidden;
+        }
+
+        .shape {
+            position: absolute;
+            opacity: 0.08;
+            border: 1px solid var(--primary-black);
+        }
+
+        .shape:nth-child(1) {
+            top: 15%;
+            left: 8%;
+            width: 120px;
+            height: 120px;
+            transform: rotate(45deg);
+            animation: float 12s ease-in-out infinite;
+        }
+
+        .shape:nth-child(2) {
+            top: 60%;
+            right: 12%;
+            width: 80px;
+            height: 80px;
+            animation: float 8s ease-in-out infinite reverse;
+        }
+
+        .shape:nth-child(3) {
+            bottom: 25%;
+            left: 75%;
+            width: 200px;
+            height: 2px;
+            background: var(--primary-black);
+            animation: float 15s ease-in-out infinite;
+        }
+
+        .hero-content {
+            text-align: center;
+            max-width: 900px;
+            padding: 2rem;
+            animation: fadeInUp 1.2s cubic-bezier(0.4, 0, 0.2, 1);
+            position: relative;
+            z-index: 10;
+        }
+
+        .hero-title {
+            font-family: 'Playfair Display', serif;
+            font-size: clamp(5rem, 12vw, 10rem);
+            font-weight: 700;
+            margin-bottom: 1rem;
+            color: var(--primary-black);
+            letter-spacing: -4px;
+            position: relative;
+        }
+
+        .hero-title::after {
+            content: '';
+            position: absolute;
+            bottom: -15px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 0;
+            height: 3px;
+            background: var(--accent-gold);
+            animation: titleUnderline 2s ease-out 1.5s forwards;
+        }
+
+        .hero-subtitle {
+            font-family: 'Playfair Display', serif;
+            font-size: 2rem;
+            color: var(--accent-steel);
+            margin-bottom: 2.5rem;
+            font-weight: 400;
+            letter-spacing: 4px;
+            text-transform: uppercase;
+            font-style: italic;
+        }
+
+        .hero-description {
+            font-size: 1.2rem;
+            color: var(--medium-gray);
+            margin-bottom: 3rem;
+            line-height: 1.8;
+            max-width: 700px;
+            margin-left: auto;
+            margin-right: auto;
+            font-style: italic;
+        }
+
+        /* Sections */
+        .section {
+            padding: 8rem 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
+            position: relative;
+        }
+
+        .section-title {
+            font-family: 'Playfair Display', serif;
+            font-size: 4rem;
+            text-align: center;
+            margin-bottom: 2rem;
+            color: var(--primary-black);
+            position: relative;
+            letter-spacing: -2px;
+        }
+
+        .section-title::before {
+            content: '';
+            position: absolute;
+            top: -25px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80px;
+            height: 2px;
+            background: var(--accent-gold);
+        }
+
+        .section-quote {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.4rem;
+            font-style: italic;
+            text-align: center;
+            color: var(--accent-steel);
+            margin-bottom: 4rem;
+            max-width: 700px;
+            margin-left: auto;
+            margin-right: auto;
+            line-height: 1.6;
+        }
+
+        /* About Section */
+        .about-hero {
+            background: linear-gradient(135deg, var(--light-gray) 0%, var(--primary-white) 100%);
+            padding: 8rem 2rem;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        /* Projects Grid */
+        .projects-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 3rem;
+            margin-top: 4rem;
+        }
+
+        .project-card {
+            background: rgba(255, 255, 255, 0.9);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(224, 224, 224, 0.5);
+            padding: 3rem;
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            position: relative;
+            overflow: hidden;
+            box-shadow: var(--shadow-light);
+        }
+
+        .project-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 4px;
+            background: var(--accent-gold);
+            transform: scaleX(0);
+            transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .project-card:hover::before {
+            transform: scaleX(1);
+        }
+
+        .project-card:hover {
+            transform: translateY(-8px);
+            box-shadow: var(--shadow-medium);
+            border-color: rgba(184, 134, 11, 0.3);
+        }
+
+        .project-title {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.8rem;
+            margin-bottom: 1.5rem;
+            color: var(--primary-black);
+            position: relative;
+            z-index: 2;
+        }
+
+        .project-description {
+            color: var(--medium-gray);
+            margin-bottom: 1.5rem;
+            line-height: 1.7;
+            position: relative;
+            z-index: 2;
+        }
+
+        .project-period {
+            font-size: 0.9rem;
+            color: var(--accent-steel);
+            font-weight: 600;
+            margin-bottom: 1rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        /* Lab Section */
+        .lab-section {
+            background: linear-gradient(135deg, var(--light-gray) 0%, var(--primary-white) 100%);
+            padding: 8rem 2rem;
+        }
+
+        .lab-content {
+            max-width: 800px;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        .lab-description {
+            font-size: 1.2rem;
+            line-height: 1.8;
+            color: var(--medium-gray);
+            margin-bottom: 4rem;
+            font-style: italic;
+        }
+
+        /* Cognito Section */
+        .cognito-section {
+            padding: 8rem 2rem;
+            background: var(--primary-white);
+        }
+
+        .cognito-content {
+            max-width: 900px;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        .cognito-description {
+            font-size: 1.2rem;
+            line-height: 1.8;
+            color: var(--medium-gray);
+            margin-bottom: 3rem;
+        }
+
+        /* Armeria Section */
+        .armeria-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin: 4rem 0;
+        }
+
+        .tool-item {
+            text-align: center;
+            padding: 2rem;
+            background: rgba(248, 248, 248, 0.8);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(224, 224, 224, 0.3);
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .tool-item:hover {
+            transform: scale(1.02);
+            background: rgba(255, 255, 255, 0.95);
+            box-shadow: var(--shadow-light);
+        }
+
+        .tool-icon {
+            font-size: 2rem;
+            margin-bottom: 1rem;
+            color: var(--accent-gold);
+        }
+
+        .tool-name {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.2rem;
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+            color: var(--primary-black);
+        }
+
+        /* Camiones Section */
+        .camiones-section {
+            background: linear-gradient(135deg, var(--light-gray) 0%, var(--primary-white) 100%);
+            padding: 8rem 2rem;
+            position: relative;
+        }
+
+        .network-visual {
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            margin: 4rem 0;
+            position: relative;
+        }
+
+        .network-node {
+            width: 80px;
+            height: 80px;
+            background: var(--gradient-primary);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 1.5rem;
+            position: relative;
+        }
+
+        .network-line {
+            position: absolute;
+            height: 2px;
+            background: var(--accent-gold);
+            top: 50%;
+            width: calc(100% - 160px);
+            left: 80px;
+            z-index: -1;
+        }
+
+        /* Contact Form */
+        .contact-form {
+            max-width: 700px;
+            margin: 4rem auto;
+            background: rgba(248, 248, 248, 0.9);
+            backdrop-filter: blur(20px);
+            padding: 4rem;
+            border: 1px solid rgba(224, 224, 224, 0.3);
+            box-shadow: var(--shadow-light);
+        }
+
+        .form-group {
+            margin-bottom: 2rem;
+        }
+
+        .form-label {
+            display: block;
+            margin-bottom: 0.8rem;
+            font-weight: 600;
+            color: var(--primary-black);
+            font-size: 1rem;
+        }
+
+        .form-input,
+        .form-textarea {
+            width: 100%;
+            padding: 1.2rem 1.5rem;
+            border: 2px solid rgba(224, 224, 224, 0.5);
+            font-family: 'Inter', sans-serif;
+            font-size: 1rem;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            background: rgba(255, 255, 255, 0.8);
+            backdrop-filter: blur(10px);
+        }
+
+        .form-input:focus,
+        .form-textarea:focus {
+            outline: none;
+            border-color: var(--accent-gold);
+            box-shadow: 0 0 0 4px rgba(184, 134, 11, 0.1);
+            background: rgba(255, 255, 255, 0.95);
+        }
+
+        .submit-btn {
+            background: var(--gradient-primary);
+            color: var(--primary-white);
+            padding: 1.2rem 3rem;
+            border: none;
+            font-size: 1.1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            width: 100%;
+            position: relative;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(10, 10, 10, 0.2);
+        }
+
+        .submit-btn::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: var(--gradient-accent);
+            transition: left 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .submit-btn:hover::before {
+            left: 0;
+        }
+
+        .submit-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 15px 40px rgba(184, 134, 11, 0.3);
+        }
+
+        .submit-btn span {
+            position: relative;
+            z-index: 1;
+        }
+
+        /* Footer */
+        .footer {
+            background: var(--gradient-primary);
+            color: var(--primary-white);
+            text-align: center;
+            padding: 4rem 2rem;
+            position: relative;
+        }
+
+        /* Animations */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(40px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes float {
+            0%, 100% {
+                transform: translateY(0px) rotate(0deg);
+            }
+            50% {
+                transform: translateY(-15px) rotate(2deg);
+            }
+        }
+
+        @keyframes titleUnderline {
+            to {
+                width: 120px;
+            }
+        }
+
+        @keyframes fadeIn {
+            to {
+                opacity: 1;
+            }
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .nav-menu {
+                position: fixed;
+                left: -100%;
+                top: 80px;
+                flex-direction: column;
+                background: rgba(254, 254, 254, 0.98);
+                backdrop-filter: blur(20px);
+                width: 100%;
+                text-align: center;
+                transition: 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+                box-shadow: var(--shadow-light);
+                padding: 2rem 0;
+                height: calc(100vh - 80px);
+                overflow-y: auto;
+            }
+
+            .nav-menu.active {
+                left: 0;
+            }
+
+            .menu-toggle {
+                display: flex;
+            }
+
+            .nav-menu.active ~ .menu-toggle .menu-bar:nth-child(1) {
+                transform: rotate(-45deg) translate(-8px, 6px);
+            }
+
+            .nav-menu.active ~ .menu-toggle .menu-bar:nth-child(2) {
+                opacity: 0;
+            }
+
+            .nav-menu.active ~ .menu-toggle .menu-bar:nth-child(3) {
+                transform: rotate(45deg) translate(-8px, -6px);
+            }
+
+            .hero-title {
+                font-size: 4rem;
+            }
+
+            .hero-subtitle {
+                font-size: 1.5rem;
+            }
+
+            .section {
+                padding: 4rem 1rem;
+            }
+
+            .section-title {
+                font-size: 2.5rem;
+            }
+
+            .projects-grid,
+            .armeria-grid {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+
+            .contact-form {
+                padding: 2rem;
+                margin: 2rem 1rem;
+            }
+
+            .network-visual {
+                flex-direction: column;
+                gap: 2rem;
+            }
+
+            .network-line {
+                width: 2px;
+                height: calc(100% - 160px);
+                top: 80px;
+                left: 50%;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .navbar {
+                padding: 1rem;
+            }
+
+            .brand {
+                font-size: 1.5rem;
+            }
+
+            .hero-title {
+                font-size: 3rem;
+                letter-spacing: -2px;
+            }
+
+            .hero-subtitle {
+                font-size: 1.2rem;
+                letter-spacing: 2px;
+            }
+
+            .section-title {
+                font-size: 2rem;
+            }
+
+            .project-card,
+            .tool-item {
+                padding: 2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="nav-container" id="navbar">
+        <div class="navbar">
+            <div class="logo-container">
+                <a href="#" class="brand" onclick="showPage('home')">Mul</a>
+            </div>
+            <ul class="nav-menu" id="nav-menu">
+                <li class="nav-item">
+                    <a href="#" class="nav-link active" onclick="showPage('home')">Inicio</a>
+                </li>
+                <li class="nav-item">
+                    <a href="#" class="nav-link" onclick="showPage('about')">Sobre Mul</a>
+                </li>
+                <li class="nav-item">
+                    <a href="#" class="nav-link" onclick="showPage('projects')">Proyectos</a>
+                </li>
+                <li class="nav-item">
+                    <a href="#" class="nav-link" onclick="showPage('lab')">Laboratorio</a>
+                </li>
+                <li class="nav-item">
+                    <a href="#" class="nav-link" onclick="showPage('cognito')">Cognito</a>
+                </li>
+                <li class="nav-item">
+                    <a href="#" class="nav-link" onclick="showPage('armeria')">Armería</a>
+                </li>
+                <li class="nav-item">
+                    <a href="#" class="nav-link" onclick="showPage('camiones')">Camiones</a>
+                </li>
+                <li class="nav-item">
+                    <a href="#" class="nav-link" onclick="showPage('contact')">Contacto</a>
+                </li>
+            </ul>
+            <div class="menu-toggle" id="mobile-menu">
+                <span class="menu-bar"></span>
+                <span class="menu-bar"></span>
+                <span class="menu-bar"></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Page Content -->
+    <div class="page-content">
+        <!-- Home Page -->
+        <div id="home" class="page active">
+            <section class="hero-section">
+                <div class="geometric-bg">
+                    <div class="shape"></div>
+                    <div class="shape"></div>
+                    <div class="shape"></div>
+                </div>
+                <div class="hero-content">
+                    <h1 class="hero-title">Mul</h1>
+                    <p class="hero-subtitle">Reality Architect</p>
+                    <p class="hero-description">
+                        Un lugar privado, solo Mul lo entendería.
+                    </p>
+                </div>
+            </section>
+        </div>
+
+        <!-- About Page -->
+        <div id="about" class="page">
+            <section class="about-hero">
+                <h1 class="section-title">Sobre Mul</h1>
+                <p class="section-quote">
+                    "La realidad no es un destino, es un material. Como arquitecto de realidades, 
+                    moldeo mundos donde lo imposible encuentra su lugar en lo cotidiano."
+                </p>
+            </section>
+
+            <section class="section">
+                <div style="background: rgba(248, 248, 248, 0.6); backdrop-filter: blur(10px); padding: 4rem; margin: 4rem 0; border: 1px solid rgba(224, 224, 224, 0.3);">
+                    <h2 style="font-family: 'Playfair Display', serif; font-size: 2.5rem; text-align: center; margin-bottom: 2rem; color: var(--primary-black);">La Travesía</h2>
+                    <p style="font-size: 1.2rem; line-height: 1.8; color: var(--medium-gray); text-align: center; max-width: 900px; margin: 0 auto 2rem;">
+                        La travesía de <strong>Mul</strong> (alter ego empresarial de Daniel Escobar) es una odisea de reinvención constante. 
+                        Inició abriendo barberías en su juventud, aprendiendo entre navajas el arte de emprender a ras de suelo. 
+                        Posteriormente se forjó como abogado, buscando estructura y rigor en las leyes, pero el destino le tenía 
+                        preparada una lección de humildad: una quiebra estrepitosa que deshizo las certezas materiales y lo impulsó 
+                        a replantear su propósito.
+                    </p>
+                    <p style="font-size: 1.2rem; line-height: 1.8; color: var(--medium-gray); text-align: center; max-width: 900px; margin: 0 auto;">
+                        Renacido de sus propias cenizas, Mul se adentró en el mundo del <em>trading</em>, encontrando en los mercados 
+                        financieros un espejo de la vida misma: caótico pero con patrones sutiles para quien sabe observar. 
+                        Con los éxitos y fracasos del trading, fundó <strong>Innova</strong>, un proyecto pionero donde empezó a 
+                        entrelazar todas sus pasiones – tecnología, educación financiera y desarrollo personal.
+                    </p>
+                </div>
+
+                <div style="background: rgba(248, 248, 248, 0.6); backdrop-filter: blur(10px); padding: 4rem; margin: 4rem 0; border: 1px solid rgba(224, 224, 224, 0.3);">
+                    <h2 style="font-family: 'Playfair Display', serif; font-size: 2.5rem; text-align: center; margin-bottom: 2rem; color: var(--primary-black);">Visión Cuántica</h2>
+                    <p style="font-size: 1.2rem; line-height: 1.8; color: var(--medium-gray); text-align: center; max-width: 900px; margin: 0 auto 2rem;">
+                        Fruto de esa evolución multidisciplinaria nació <strong>Cognito</strong>, concebido no solo como una empresa, 
+                        sino como un sistema integral de transformación. Cognito es la gran obra de Mul: un ecosistema vivo que 
+                        unifica todas sus etapas previas en una arquitectura holística. Aquí volcó su <em>visión cuántica</em> de 
+                        la vida – la creencia de que el observador y su intención influyen en la realidad que se manifiesta.
+                    </p>
+                    <p style="font-size: 1.2rem; line-height: 1.8; color: var(--medium-gray); text-align: center; max-width: 900px; margin: 0 auto;">
+                        Mul se obsesiona con la "arquitectura de realidades": concibe cada proyecto como un plano dentro de un gran 
+                        diseño cuyas vigas son las ideas y cuya argamasa es la voluntad. Como un arquitecto metafísico, combina 
+                        estrategias empresariales con principios espirituales, convencido de que la imaginación, cuando se disciplina 
+                        y se alinea con propósito, es capaz de levantar imperios tan concretos como un edificio.
+                    </p>
+                </div>
+            </section>
+        </div>
+
         <!-- Projects Page -->
         <div id="projects" class="page">
             <section class="section">
@@ -870,9 +1737,13 @@
                         <p class="project-description">
                             <strong>Zeven Global</strong> es un bróker y plataforma de trading de nueva generación que Mul co-dirige para 
                             democratizar el acceso a los mercados financieros globales. Con sede estratégica en Costa Rica, Zeven ofrece 
-                            a traders de Latinoamérica tecnología de punta: cuentas apalancadas de alto rendimiento, <em>copytrading</em> 
-                            automatizado y una suite profesional con MetaTrader 5 y WebTrader. Más que una financiera, es una comunidad 
-                            vibrante con webinars semanales y un programa de afiliados robusto que recompensa la expansión del círculo.
+                            a traders de Latinoamérica y el mundo tecnología de punta para operar con agilidad y confianza. Cuentas 
+                            apalancadas de alto rendimiento, <em>copytrading</em> automatizado y una suite profesional de herramientas 
+                            (como MetaTrader 5 y WebTrader) conforman un ecosistema diseñado para formar traders ganadores. Más que una 
+                            simple financiera, Zeven Global es una comunidad vibrante: webinars semanales educan desde principiantes 
+                            hasta expertos, y un programa de afiliados robusto recompensa la expansión del círculo. Mul visualiza este 
+                            proyecto como la fusión perfecta entre tecnología financiera y empoderamiento personal, donde cada operador 
+                            puede escalar sus habilidades con datos en tiempo real y acompañamiento continuo.
                         </p>
                         <div style="color: var(--accent-gold); font-weight: 600; font-size: 0.9rem; text-transform: uppercase;">
                             #Finanzas #Trading #Tecnología
@@ -884,11 +1755,16 @@
                         <h3 class="project-title">American Freight Movers</h3>
                         <h4 style="font-family: 'Playfair Display', serif; font-size: 1.2rem; color: var(--accent-steel); margin-bottom: 1rem; font-style: italic;">Logística sobre ruedas con alcance continental</h4>
                         <p class="project-description">
-                            <strong>American Freight Movers</strong> es la incursión de Mul en el mundo logístico y de transporte de carga en Estados Unidos. 
-                            Como empresa de logística y <em>brokerage</em> con base de activos propia, conecta mercancías con rutas óptimas, 
-                            operando una flota que mueve productos a lo largo y ancho del país. Mul ha implementado metodologías de eficiencia 
-                            inspiradas en el trading: análisis de datos para optimizar rutas, gestión precisa del riesgo y especialización 
-                            en carga refrigerada con planificación just-in-time.
+                            <strong>American Freight Movers</strong> es la incursión de Mul en el mundo logístico y de transporte de carga 
+                            en Estados Unidos. Como empresa de logística y <em>brokerage</em> con base de activos propia, conecta mercancías 
+                            con rutas óptimas, operando una flota de camiones que mueven productos a lo largo y ancho del país. Mul ha 
+                            contribuido a AFM implementando metodologías de eficiencia inspiradas en el trading: análisis de datos para 
+                            optimizar rutas, gestión precisa del riesgo en carretera y un énfasis en la confiabilidad del servicio. La empresa 
+                            se especializa en transportar carga refrigerada y perecedera con un sistema de planificación just-in-time, 
+                            asegurando entregas puntuales en un sector donde el tiempo lo es todo. Cada camión en la carretera lleva consigo 
+                            la visión de Mul de hacer tangible el progreso: son motores de oportunidad que impulsan economías locales y 
+                            conectan puntos distantes. American Freight Movers refleja su filosofía de llevar ideas a la acción concreta; 
+                            en este caso, literalmente sobre ruedas.
                         </p>
                         <div style="color: var(--accent-gold); font-weight: 600; font-size: 0.9rem; text-transform: uppercase;">
                             #Logística #Transporte #USA
@@ -900,11 +1776,17 @@
                         <h3 class="project-title">Cognito IA</h3>
                         <h4 style="font-family: 'Playfair Display', serif; font-size: 1.2rem; color: var(--accent-steel); margin-bottom: 1rem; font-style: italic;">Inteligencia Artificial al servicio de la visión</h4>
                         <p class="project-description">
-                            <strong>Cognito IA</strong> representa el brazo tecnológico y cognitivo del ecosistema de Mul. A través de 
-                            <em>bots</em> entrenados, asistentes virtuales y modelos predictivos, actúa como una mente expandida: 
-                            analiza datos, genera recordatorios inteligentes y sugiere estrategias óptimas. Mul usa este proyecto para 
-                            materializar su sueño de integrar IA en la vida cotidiana con propósito, democratizando capacidades que 
-                            antes requerían equipos enteros de trabajo.
+                            <strong>Cognito IA</strong> representa el brazo tecnológico y cognitivo del ecosistema de Mul. Es una iniciativa 
+                            de Inteligencia Artificial aplicada, concebida para potenciar la creatividad y la productividad tanto de Mul como 
+                            de su comunidad. A través de <em>bots</em> entrenados, asistentes virtuales y modelos predictivos, Cognito IA actúa 
+                            como una mente expandida: un sistema que analiza datos, genera recordatorios inteligentes y sugiere estrategias 
+                            óptimas, funcionando como el copiloto invisible en cada proyecto. Por ejemplo, Cognito IA ayuda a prototipar ideas 
+                            en tiempo récord, escribiendo código básico, diseñando flujos operativos o elaborando reportes de viabilidad con 
+                            solo una indicación humana. Mul usa este proyecto para materializar su sueño de integrar IA en la vida cotidiana 
+                            de las personas con propósito, brindándoles una ventaja exponencial. En esencia, Cognito IA busca democratizar 
+                            capacidades que antes requerían equipos enteros de trabajo, entregando ese poder a individuos visionarios. Es la 
+                            intuición de Mul hecha algoritmo, la síntesis de su conocimiento disperso en una red neural que aprende y evoluciona 
+                            con cada interacción.
                         </p>
                         <div style="color: var(--accent-gold); font-weight: 600; font-size: 0.9rem; text-transform: uppercase;">
                             #InteligenciaArtificial #Automatización #Productividad
@@ -917,10 +1799,16 @@
                         <h4 style="font-family: 'Playfair Display', serif; font-size: 1.2rem; color: var(--accent-steel); margin-bottom: 1rem; font-style: italic;">Cuna de innovación y reinvención empresarial</h4>
                         <p class="project-description">
                             <strong>Innova</strong> es el proyecto con el que Mul sentó las bases de su filosofía empresarial integral. 
-                            Nacido tras sus primeras incursiones exitosas en el trading, surgió como un hub de innovación donde las ideas 
-                            se convertían en acciones concretas. Aquí incubó startups y entrenó a jóvenes emprendedores, combinando educación 
-                            financiera con desarrollo personal. Fue el primer mapa donde delineó las rutas entre el sueño y la empresa, 
-                            demostrando que un negocio puede ser rentable y a la vez un campo de aprendizaje espiritual.
+                            Nacido tras sus primeras incursiones exitosas en el trading, Innova surgió como un hub de innovación y 
+                            emprendimiento donde las ideas se convertían en acciones concretas. En este espacio, Mul incubó startups y 
+                            entrenó a jóvenes emprendedores, combinando educación financiera con desarrollo personal. Innova fue, en cierto 
+                            modo, un reflejo de su propia metamorfosis: una empresa que ofrecía consultorías, cursos y metodologías para 
+                            transformar negocios tradicionales en modelos ágiles y visionarios. Aquí empezó a utilizar principios de 
+                            manifestación y pensamiento cuántico en contextos corporativos, enseñando a otros a diseñar su mentalidad tanto 
+                            como sus modelos de negocio. Muchas de las herramientas y redes de contacto que luego alimentarían a Cognito se 
+                            forjaron en la era Innova. Este proyecto demostró que un negocio puede ser rentable y a la vez un campo de 
+                            aprendizaje espiritual y creativo. Aún hoy, el legado de Innova pervive en cada nuevo experimento de Mul, pues 
+                            fue el primer mapa donde delineó las rutas entre el sueño y la empresa.
                         </p>
                         <div style="color: var(--accent-gold); font-weight: 600; font-size: 0.9rem; text-transform: uppercase;">
                             #Innovación #Emprendimiento #Educación
@@ -932,11 +1820,18 @@
                         <h3 class="project-title">Método Cognito</h3>
                         <h4 style="font-family: 'Playfair Display', serif; font-size: 1.2rem; color: var(--accent-steel); margin-bottom: 1rem; font-style: italic;">Ecosistema de transformación integral</h4>
                         <p class="project-description">
-                            El <strong>Método Cognito</strong> es la obra cumbre de Mul en el ámbito del crecimiento personal y profesional. 
-                            Un programa que condensa toda su sabiduría en un sistema aplicable donde convergen filosofía cuántica, 
-                            entrenamiento emprendedor y tecnología punta. Utiliza plataformas modernas como <strong>Whop</strong> para 
-                            distribuir contenido y mentoría. Un viaje guiado desde la intención hasta la ejecución, donde cada lección 
-                            expande la conciencia y cada ejercicio forja una habilidad tangible.
+                            El <strong>Método Cognito</strong> es la obra cumbre de Mul en el ámbito del crecimiento personal y profesional, 
+                            un programa que condensa toda su sabiduría en un sistema aplicable a la vida de cualquier persona. Se trata de un 
+                            ecosistema de transformación integral donde convergen filosofía cuántica, entrenamiento emprendedor y tecnología punta. 
+                            A través de este método, Mul guía a individuos de cualquier perfil a descubrir su propósito auténtico y a encaminar 
+                            ese hallazgo hacia proyectos reales. El programa combina sesiones de mentoría, desafíos prácticos y apoyo de 
+                            herramientas de IA para catalizar el progreso. Utiliza de forma estratégica plataformas modernas – por ejemplo, una 
+                            comunidad exclusiva en <strong>Whop</strong> – para distribuir contenido, mentoría y recursos a los participantes de 
+                            manera ágil y segura. En el Método Cognito, un alumno puede comenzar sin conocimientos previos y, tras un recorrido 
+                            estructurado, emerger como un creador de su propia realidad: con un proyecto (o un rol dentro del ecosistema) alineado 
+                            a su pasión y con las competencias adquiridas para sostenerlo. Más que un curso, es una aventura de autodescubrimiento 
+                            dirigida con precisión empresarial. Mul lo describe como "un viaje guiado desde la intención hasta la ejecución", 
+                            donde cada lección expande la conciencia y cada ejercicio forja una habilidad tangible.
                         </p>
                         <div style="color: var(--accent-gold); font-weight: 600; font-size: 0.9rem; text-transform: uppercase;">
                             #DesarrolloPersonal #Mentoría #Comunidad
@@ -948,11 +1843,18 @@
                         <h3 class="project-title">Podcast de Mul</h3>
                         <h4 style="font-family: 'Playfair Display', serif; font-size: 1.2rem; color: var(--accent-steel); margin-bottom: 1rem; font-style: italic;">Voces del futuro y filosofía aplicada</h4>
                         <p class="project-description">
-                            El <strong>podcast de Mul</strong> es una ventana auditiva al universo de ideas que orbitan su mente. 
-                            Explora temas desde la tecnología cuántica hasta la antigüedad clásica, hilando conversaciones profundas 
-                            con un estilo ameno y visionario. Los oyentes describen la experiencia como "tomar un café con el futuro", 
-                            pues Mul tiene el don de hacer cercanos los conceptos más complejos y ofrecer vislumbres de lo que podría 
-                            ser el mañana si combinamos propósito y acción.
+                            El <strong>podcast de Mul</strong> es una ventana auditiva al universo de ideas que orbitan su mente. En este 
+                            espacio sonoro, Mul explora temas que van desde la tecnología cuántica hasta la antigüedad clásica, hilando 
+                            conversaciones profundas con un estilo ameno y visionario. Cada episodio es una pieza editorial cuidada: a veces 
+                            monólogos reflexivos donde comparte anécdotas de su vida – la dureza de empezar de cero, lecciones extraídas del 
+                            silencio tras el caos – y otras veces entrevistas con invitados excepcionales: emprendedores, científicos, filósofos 
+                            contemporáneos que desafían el <em>status quo</em>. El tono del podcast es elevado pero accesible, poético a la vez 
+                            que pragmático, muy en la línea de la marca Mul. A través de este medio, busca sembrar inquietudes y despertar 
+                            inspiración en su audiencia global. Los oyentes describen la experiencia como "tomar un café con el futuro", pues 
+                            Mul tiene el don de hacer cercanos los conceptos más complejos y de ofrecer vislumbres de lo que podría ser el mañana 
+                            si combinamos propósito y acción. Disponible en plataformas digitales y con una comunidad activa que comenta y pregunta, 
+                            el podcast es, para Mul, otra forma de mentorar a distancia, de expandir la conversación hacia aquellos rincones del 
+                            mundo donde una idea puede prender la chispa de una transformación.
                         </p>
                         <div style="color: var(--accent-gold); font-weight: 600; font-size: 0.9rem; text-transform: uppercase;">
                             #Podcast #Filosofía #Futuro
@@ -975,19 +1877,24 @@
                         El <strong>Laboratorio</strong> de Mul es el espacio donde la ciencia y el arte de emprender convergen en 
                         experimentos audaces. Como un alquimista moderno, Mul crea <em>MVPs</em> (Productos Mínimos Viables) a 
                         velocidad relámpago apoyándose en herramientas de Inteligencia Artificial de última generación. En cuestión 
-                        de días –a veces horas– es capaz de pasar de una idea naciente a un prototipo funcional.
+                        de días –a veces horas– es capaz de pasar de una idea naciente a un prototipo funcional: aplicaciones, flujos 
+                        de trabajo o modelos de negocio esbozados con la ayuda de algoritmos generativos y automatizaciones. Este enfoque 
+                        le permite probar hipótesis rápidamente en el mundo real, depurando lo que funciona de lo que no.
                     </p>
                     <p class="lab-description">
                         Pero el laboratorio no se limita al desarrollo tecnológico; es también un taller de la mente. Mul experimenta 
                         consigo mismo aplicando <strong>protocolos de productividad</strong> poco convencionales: desde metodologías 
                         ágiles adaptadas a la vida personal hasta ritmos de trabajo diseñados según biorritmos y estados de flujo óptimos. 
-                        Cada experimento tiene un propósito claro: <strong>traducir la visión estratégica en una estructura operativa</strong>.
+                        Juega con combinaciones de hábitos y estimulantes (meditación profunda seguida de sprints creativos, ayunos digitales 
+                        para fomentar la concentración, etc.), registrando meticulosamente los resultados. Cada experimento tiene un propósito 
+                        claro: <strong>traducir la visión estratégica en una estructura operativa</strong>.
                     </p>
                     <p class="lab-description">
-                        Aquí destila la complejidad de grandes objetivos en fórmulas accionables. Su pasión por la "arquitectura de realidades" 
-                        encuentra en este laboratorio el banco de pruebas: cada iteración es un plano más afinado, cada fallo una lección, 
+                        Si descubre una práctica efectiva, la convierte en un protocolo replicable que otros pueden adoptar. Así, en este 
+                        laboratorio, Mul destila la complejidad de grandes objetivos en fórmulas accionables. Su pasión por la "arquitectura 
+                        de realidades" encuentra aquí el banco de pruebas: cada iteración es un plano más afinado, cada fallo una lección, 
                         cada acierto un modelo listo para escalar. El resultado es un repertorio de pequeñas invenciones y hábitos de alto 
-                        impacto que posteriormente alimentan al ecosistema Cognito.
+                        impacto que posteriormente alimentan al ecosistema Cognito, asegurando que la brecha entre soñar y hacer se haga cada vez más corta.
                     </p>
                 </div>
             </section>
@@ -1006,19 +1913,31 @@
                         <strong>Cognito</strong> es más que un método; es un ecosistema de transformación integral donde cualquiera 
                         puede reinventarse y contribuir a algo trascendente. Concebido por Mul como la encarnación de su filosofía, 
                         Cognito recibe a personas de cualquier perfil –sin importar su formación, edad o experiencia– y las integra 
-                        en una comunidad diseñada para catalizar su propósito personal.
+                        en una comunidad diseñada para catalizar su propósito personal. Funciona como una incubadora viviente de propósito 
+                        y acción: al ingresar, cada individuo atraviesa un proceso de autodescubrimiento, aprendizaje acelerado y definición 
+                        de objetivos, para luego ser posicionado en proyectos concretos (ya sean iniciativas propias surgidas en el proceso, 
+                        o emprendimientos del ecosistema donde su talento encaja). En Cognito conviven desarrolladores, artistas, analistas, 
+                        educadores... la diversidad es intencional, porque cada habilidad enriquece el conjunto y amplía el horizonte creativo.
                     </p>
                     <p class="cognito-description">
-                        Funciona como una incubadora viviente de propósito y acción: al ingresar, cada individuo atraviesa un proceso 
-                        de autodescubrimiento, aprendizaje acelerado y definición de objetivos, para luego ser posicionado en proyectos 
-                        concretos. La estructura se inspira en la idea de una <em>"comunidad líquida"</em>: no hay jerarquías rígidas 
-                        ni organigramas tallados en piedra, sino roles flexibles y horizontales que cambian según la naturaleza de cada proyecto.
+                        La estructura de Cognito se inspira en la idea de una <em>"comunidad líquida"</em>: no hay jerarquías rígidas 
+                        ni organigramas tallados en piedra, sino roles flexibles y horizontales que cambian según la naturaleza de cada proyecto. 
+                        Alguien puede liderar un equipo en un desafío y ser aprendiz en el siguiente; las contribuciones se miden por competencia 
+                        y pasión más que por títulos. Esta flexibilidad orgánica – apoyada por una comunicación abierta y un flujo constante de 
+                        feedback – crea un entorno ágil, capaz de reconfigurarse ante cada nuevo reto sin perder cohesión. En el corazón de 
+                        Cognito late la convicción de que todos tienen un genio interno por descubrir y un lugar óptimo donde desplegarlo.
                     </p>
                     <p class="cognito-description">
                         Mul ha incorporado la Inteligencia Artificial como catalizador invisible de este ecosistema. Desde asistentes 
                         virtuales que personalizan rutas de aprendizaje hasta algoritmos que conectan a las personas correctas en el 
-                        momento oportuno, la IA en Cognito amplifica la potencialidad humana. En Cognito, tecnología y humanidad 
-                        coexisten en simbiosis: la máquina potencia la intuición y la creatividad en lugar de reprimirlas.
+                        momento oportuno, la IA en Cognito amplifica la potencialidad humana. Automatiza tareas tediosas, analiza los avances 
+                        individuales para sugerir mejoras, y sirve de apoyo para que los miembros tomen decisiones informadas rápidamente. 
+                        En Cognito, tecnología y humanidad coexisten en simbiosis: la máquina potencia la intuición y la creatividad en lugar 
+                        de reprimirlas. El resultado es un círculo virtuoso donde el crecimiento interior de cada miembro –su aumento de 
+                        consciencia, conocimiento y confianza– se traduce en impacto tangible. Al final del camino, Cognito busca que las 
+                        personas no solo hayan transformado sus vidas, sino que se conviertan en agentes activos de cambio, integrados en 
+                        una red de proyectos con significado. Es la visión de Mul hecha plataforma comunitaria: una incubadora de realidades 
+                        conscientes donde el éxito se mide en propósitos cumplidos y mundos nuevos construidos.
                     </p>
                 </div>
             </section>
@@ -1072,11 +1991,28 @@
                 </div>
                 
                 <div style="background: rgba(248, 248, 248, 0.6); backdrop-filter: blur(10px); padding: 3rem; margin: 4rem 0; border: 1px solid rgba(224, 224, 224, 0.3); text-align: center;">
-                    <p style="font-size: 1.1rem; line-height: 1.7; color: var(--medium-gray); font-style: italic;">
+                    <p style="font-size: 1.1rem; line-height: 1.7; color: var(--medium-gray); font-style: italic; margin-bottom: 2rem;">
                         La <strong>Armería</strong> de Mul no está hecha de acero ni pólvora, sino de ideas, aplicaciones y rituales 
-                        que extienden su mente más allá de los límites convencionales. Cada herramienta ha sido seleccionada y refinada 
-                        a través de años de práctica. No se trata solo de tecnologías o metodologías, sino de extensiones del pensamiento 
-                        que permiten esculpir realidades con precisión artesanal y visión futurista.
+                        que extienden su mente más allá de los límites convencionales. Entre sus principales armas conceptuales se encuentra 
+                        <strong>Notion</strong>, que funge como su "segundo cerebro" digital: un repositorio vivo y cuidadosamente 
+                        estructurado donde organiza pensamientos, planes y conocimientos de forma interconectada. En este cuaderno infinito, 
+                        cada proyecto tiene su espacio, cada reflexión su registro; la claridad mental de Mul se ve replicada en la 
+                        arquitectura ordenada de sus notas.
+                    </p>
+                    <p style="font-size: 1.1rem; line-height: 1.7; color: var(--medium-gray); font-style: italic; margin-bottom: 2rem;">
+                        A la par, empuña <strong>Zapier</strong> como daga invisible entre sistemas: una herramienta de automatización con 
+                        la que integra más de 3.000 aplicaciones, orquestando flujos de trabajo automáticos que ahorran tiempo y evitan 
+                        errores humanos. En su armería mental tampoco faltan los asistentes de <strong>Inteligencia Artificial</strong>, 
+                        que actúan como escuderos incansables para obtener recordatorios inteligentes, resúmenes de información y perspectivas 
+                        novedosas en la resolución de problemas – es como tener un consejo de sabios algorítmicos siempre disponible.
+                    </p>
+                    <p style="font-size: 1.1rem; line-height: 1.7; color: var(--medium-gray); font-style: italic;">
+                        Pero quizá las herramientas más intrigantes en la colección de Mul sean sus <strong>protocolos bioquímicos y filosóficos</strong>. 
+                        Ha experimentado con microdosis de ketamina junto con dosis medidas de cafeína para explorar estados mentales de alto 
+                        enfoque y disolver bloqueos creativos. Asimismo, practica la <strong>manifestación cuántica</strong>, disciplina en la 
+                        cual alinea deliberadamente sus pensamientos, emociones y creencias hacia un objetivo para influir en el mundo material. 
+                        Complementando lo anterior, es un estudioso de la <strong>filosofía clásica</strong> – de Sócrates, Epicteto, Marco Aurelio – 
+                        extrayendo principios atemporales que aplica cotidianamente como códigos de conducta y toma de decisiones.
                     </p>
                 </div>
             </section>
@@ -1111,13 +2047,26 @@
                         <p style="font-size: 1.1rem; line-height: 1.8; color: var(--medium-gray); margin-bottom: 2rem;">
                             Aplica una deliberada <em>estrategia de escasez percibida</em>: solo un número muy limitado de camiones 
                             se abre a la co-inversión, creando una aureola de exclusividad que magnetiza a aquellos inversores con 
-                            verdadera convicción. Al restringir intencionalmente la disponibilidad, cada participación se vuelve más valiosa.
+                            verdadera convicción. Al restringir intencionalmente la disponibilidad – muy al estilo de las casas de lujo 
+                            o series limitadas – Mul logra que cada participación se valore más. Esta sensación de oportunidad escasa y 
+                            valiosa genera urgencia y compromiso genuino: quienes suben a bordo no son simples especuladores, sino socios 
+                            alineados con la visión, dispuestos a recorrer la milla extra en conjunto. Cada camión ofrecido se convierte 
+                            así en un vehículo de sueños colectivos, una prueba de que la visión compartida puede tomar forma de máquina y motor.
+                        </p>
+                        <p style="font-size: 1.1rem; line-height: 1.8; color: var(--medium-gray); margin-bottom: 2rem;">
+                            El andamiaje financiero detrás de este modelo está cuidadosamente diseñado para brindar solidez y confianza. 
+                            Mul estructura la inversión bajo un <strong>modelo de LLC por camión</strong>: cada vehículo opera dentro de 
+                            su propia sociedad independiente, lo que compartimenta responsabilidad y riesgo. Esta táctica protege el capital 
+                            invertido – si un camión enfrenta contratiempos, los demás permanecen resguardados en sus casillas jurídicas – 
+                            y al mismo tiempo ofrece transparencia absoluta sobre el rendimiento de cada unidad.
                         </p>
                         <p style="font-size: 1.1rem; line-height: 1.8; color: var(--medium-gray);">
-                            El andamiaje financiero está cuidadosamente diseñado: <strong>modelo de LLC por camión</strong>, donde cada 
-                            vehículo opera dentro de su propia sociedad independiente. Los ingresos provienen de las <strong>comisiones</strong> 
-                            generadas por el flete, y se aprovechan las ventajas fiscales del sector con depreciación acelerada que actúa 
-                            como <strong>escudo fiscal</strong>.
+                            Los ingresos provienen de las <strong>comisiones</strong> generadas por el flete: semana a semana, los inversores 
+                            reciben una porción de las utilidades producidas por su camión, convirtiendo el flujo del transporte en flujo de caja. 
+                            Adicionalmente, Mul aprovecha las ventajas fiscales del sector: la depreciación acelerada del vehículo, junto con 
+                            gastos operativos, actúan como un <strong>escudo fiscal</strong> que reduce la carga impositiva sobre las ganancias. 
+                            Esta combinación de ingresos constantes, optimización tributaria y activo real de respaldo provee una robusta 
+                            <strong>protección de capital</strong>: la inversión está asegurada por algo más que promesas, tiene ruedas, motor y un número de serie.
                         </p>
                     </div>
                     
@@ -1130,6 +2079,227 @@
                 </div>
             </section>
         </div>
+
+        <!-- Contact Page -->
+        <div id="contact" class="page">
+            <section class="section">
+                <h1 class="section-title">Contacto</h1>
+                <p class="section-quote">
+                    "¿Tienes una realidad en mente que necesita arquitectura? 
+                    Conversemos sobre cómo darle forma al futuro."
+                </p>
+                
+                <div style="background: rgba(248, 248, 248, 0.8); backdrop-filter: blur(10px); padding: 3rem; margin: 3rem auto; max-width: 800px; border: 1px solid rgba(224, 224, 224, 0.3); text-align: center;">
+                    <h3 style="font-family: 'Playfair Display', serif; font-size: 1.8rem; margin-bottom: 2rem; color: var(--primary-black);">Un Llamado a Espíritus Afines</h3>
+                    <p style="font-size: 1.1rem; line-height: 1.8; color: var(--medium-gray); margin-bottom: 2rem;">
+                        La sección de contacto no es una simple formalidad comercial, sino un <strong>llamado</strong> a espíritus afines. 
+                        Mul abre esta puerta para quienes portan una visión concreta y un propósito claro, aquellos dispuestos a construir 
+                        una realidad con significado profundo.
+                    </p>
+                    <p style="font-size: 1.1rem; line-height: 1.8; color: var(--medium-gray); margin-bottom: 2rem;">
+                        Más que clientes, aquí buscamos <em>aliados y co-creadores</em>: personas que anhelan trabajar en sus metas con 
+                        pasión y conciencia, integrándose a un ecosistema donde las ideas con alma encuentran tierra fértil. Si al leer 
+                        estas líneas sientes que resuenan con tu propia búsqueda, entonces eres bienvenido a presentarte.
+                    </p>
+                    <p style="font-size: 1.1rem; line-height: 1.8; color: var(--medium-gray);">
+                        Cuéntanos brevemente tu idea, tu misión y qué te impulsa; cada mensaje nacido de la autenticidad será atendido 
+                        con la misma energía. Esta convocatoria no promete tratos convencionales, promete conexiones con sentido. 
+                        Si traes convicción y claridad, Mul ofrece un espacio donde esa chispa puede prender en llama creadora. 
+                        Juntos, quizás encendamos el próximo gran proyecto que dé luz a un futuro más consciente.
+                    </p>
+                </div>
+                
+                <form class="contact-form" onsubmit="handleSubmit(event)">
+                    <div class="form-group">
+                        <label for="name" class="form-label">Nombre</label>
+                        <input type="text" id="name" name="name" class="form-input" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="email" class="form-label">Email</label>
+                        <input type="email" id="email" name="email" class="form-input" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="project" class="form-label">Tipo de Proyecto</label>
+                        <input type="text" id="project" name="project" class="form-input" placeholder="Fintech, Logística, IA, Educación, Filosofía...">
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="message" class="form-label">Tu Visión</label>
+                        <textarea id="message" name="message" class="form-textarea" rows="6" placeholder="Cuéntame sobre tu visión, tu proyecto, tu realidad por construir. ¿Qué te impulsa? ¿Cuál es tu misión?" required></textarea>
+                    </div>
+                    
+                    <button type="submit" class="submit-btn">
+                        <span>Iniciar Conversación</span>
+                    </button>
+                </form>
+
+                <div style="text-align: center; margin-top: 4rem; padding: 3rem; background: rgba(248, 248, 248, 0.6); backdrop-filter: blur(10px); border: 1px solid rgba(224, 224, 224, 0.3);">
+                    <h3 style="font-family: 'Playfair Display', serif; font-size: 1.8rem; margin-bottom: 2rem; color: var(--primary-black);">Conecta con el Ecosistema</h3>
+                    <div style="display: flex; justify-content: center; gap: 2rem; flex-wrap: wrap;">
+                        <a href="#" style="color: var(--accent-gold); text-decoration: none; font-weight: 600; transition: all 0.3s ease; display: flex; align-items: center; gap: 0.5rem;">
+                            📊 Zeven Global
+                        </a>
+                        <a href="#" style="color: var(--accent-gold); text-decoration: none; font-weight: 600; transition: all 0.3s ease; display: flex; align-items: center; gap: 0.5rem;">
+                            🚛 American Freight
+                        </a>
+                        <a href="#" style="color: var(--accent-gold); text-decoration: none; font-weight: 600; transition: all 0.3s ease; display: flex; align-items: center; gap: 0.5rem;">
+                            🧠 Cognito IA
+                        </a>
+                        <a href="#" style="color: var(--accent-gold); text-decoration: none; font-weight: 600; transition: all 0.3s ease; display: flex; align-items: center; gap: 0.5rem;">
+                            🎓 Método Cognito
+                        </a>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <p style="margin-bottom: 1rem; position: relative; z-index: 2; font-style: italic;">
+            "Donde cada realidad encuentra su arquitecto, y cada visión su forma tangible."
+        </p>
+        <p style="color: rgba(255, 255, 255, 0.7); font-size: 0.9rem; position: relative; z-index: 2;">
+            © 2025 Mul - Reality Architect. Construyendo futuros desde la tradición.
+        </p>
+    </footer>
+
+    <script>
+        // Navigation functionality
+        function showPage(pageId) {
+            // Hide all pages
+            const pages = document.querySelectorAll('.page');
+            pages.forEach(page => {
+                page.classList.remove('active');
+            });
+
+            // Show selected page
+            const targetPage = document.getElementById(pageId);
+            if (targetPage) {
+                targetPage.classList.add('active');
+            }
+
+            // Update active nav link
+            const navLinks = document.querySelectorAll('.nav-link');
+            navLinks.forEach(link => {
+                link.classList.remove('active');
+            });
+
+            // Find and activate the corresponding nav link
+            const navLinkTexts = {
+                'home': 'Inicio',
+                'about': 'Sobre Mul',
+                'projects': 'Proyectos',
+                'lab': 'Laboratorio',
+                'cognito': 'Cognito',
+                'armeria': 'Armería',
+                'camiones': 'Camiones',
+                'contact': 'Contacto'
+            };
+
+            navLinks.forEach(link => {
+                if (link.textContent === navLinkTexts[pageId]) {
+                    link.classList.add('active');
+                }
+            });
+
+            // Close mobile menu if open
+            const navMenu = document.getElementById('nav-menu');
+            navMenu.classList.remove('active');
+
+            // Scroll to top
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+
+        // Mobile menu toggle
+        const mobileMenu = document.getElementById('mobile-menu');
+        const navMenu = document.getElementById('nav-menu');
+
+        mobileMenu.addEventListener('click', () => {
+            navMenu.classList.toggle('active');
+        });
+
+        // Close mobile menu when clicking on a link
+        const navLinks = document.querySelectorAll('.nav-link');
+        navLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                navMenu.classList.remove('active');
+            });
+        });
+
+        // Navbar scroll effect
+        window.addEventListener('scroll', () => {
+            const navbar = document.getElementById('navbar');
+            if (window.scrollY > 50) {
+                navbar.classList.add('scrolled');
+            } else {
+                navbar.classList.remove('scrolled');
+            }
+        });
+
+        // Contact form handler
+        function handleSubmit(event) {
+            event.preventDefault();
+            
+            const form = event.target;
+            const formData = new FormData(form);
+            
+            const name = formData.get('name');
+            const email = formData.get('email');
+            const message = formData.get('message');
+            
+            if (name && email && message) {
+                const submitBtn = form.querySelector('.submit-btn');
+                const originalText = submitBtn.querySelector('span').textContent;
+                
+                submitBtn.querySelector('span').textContent = 'Enviando mensaje...';
+                submitBtn.disabled = true;
+                
+                setTimeout(() => {
+                    submitBtn.querySelector('span').textContent = '¡Mensaje Enviado con Éxito!';
+                    form.reset();
+                    
+                    setTimeout(() => {
+                        submitBtn.querySelector('span').textContent = originalText;
+                        submitBtn.disabled = false;
+                    }, 3000);
+                }, 1500);
+            }
+        }
+
+        // Initialize page
+        document.addEventListener('DOMContentLoaded', () => {
+            showPage('home');
+            
+            // Enhanced scroll animations
+            const observerOptions = {
+                threshold: 0.1,
+                rootMargin: '0px 0px -50px 0px'
+            };
+
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.style.opacity = '1';
+                        entry.target.style.transform = 'translateY(0)';
+                    }
+                });
+            }, observerOptions);
+
+            // Observe elements for animation
+            const animatedElements = document.querySelectorAll('.project-card, .tool-item');
+            animatedElements.forEach(el => {
+                el.style.opacity = '0';
+                el.style.transform = 'translateY(20px)';
+                el.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+                observer.observe(el);
+            });
+        });
+    </script>
+</body>
+</html>
 
         <!-- Contact Page -->
         <div id="contact" class="page">
