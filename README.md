@@ -1,1 +1,1253 @@
-# cognitomulmap
+# cognitomulmap<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Mul - Reality Architect. Un lugar privado, solo Mul lo entendería.">
+    <meta name="keywords" content="Reality Architect, Mul, Zeven Global, American Freight Movers, Cognito IA, Innova Escuela">
+    <meta name="author" content="Mul">
+    <title>Mul - Reality Architect</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+    
+    <!-- Open Graph Meta Tags -->
+    <meta property="og:title" content="Mul - Reality Architect">
+    <meta property="og:description" content="Un lugar privado, solo Mul lo entendería.">
+    <meta property="og:type" content="website">
+    
+    <style>
+        :root {
+            --primary-black: #0a0a0a;
+            --primary-white: #fefefe;
+            --accent-gold: #b8860b;
+            --accent-steel: #708090;
+            --light-gray: #f8f8f8;
+            --medium-gray: #666;
+            --border-gray: #e0e0e0;
+            --glass-bg: rgba(254, 254, 254, 0.1);
+            --shadow-light: 0 8px 32px rgba(0, 0, 0, 0.1);
+            --shadow-medium: 0 15px 40px rgba(0, 0, 0, 0.15);
+            --gradient-primary: linear-gradient(135deg, #0a0a0a 0%, #2a2a2a 100%);
+            --gradient-accent: linear-gradient(135deg, #b8860b 0%, #708090 100%);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            line-height: 1.6;
+            color: var(--primary-black);
+            background: var(--primary-white);
+            overflow-x: hidden;
+        }
+
+        /* Navigation */
+        .nav-container {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            background: rgba(254, 254, 254, 0.95);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            z-index: 1000;
+            border-bottom: 1px solid rgba(224, 224, 224, 0.3);
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .nav-container.scrolled {
+            background: rgba(254, 254, 254, 0.98);
+            box-shadow: var(--shadow-light);
+            border-bottom: 1px solid var(--border-gray);
+        }
+
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1rem 2rem;
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        .logo-container {
+            display: flex;
+            align-items: center;
+        }
+
+        .brand {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: var(--primary-black);
+            text-decoration: none;
+            transition: all 0.3s ease;
+            position: relative;
+        }
+
+        .brand:hover {
+            color: var(--accent-gold);
+            transform: translateY(-1px);
+        }
+
+        .nav-menu {
+            display: flex;
+            list-style: none;
+            gap: 1.5rem;
+        }
+
+        .nav-item {
+            position: relative;
+        }
+
+        .nav-link {
+            text-decoration: none;
+            color: var(--primary-black);
+            font-weight: 500;
+            font-size: 0.9rem;
+            letter-spacing: 0.5px;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            position: relative;
+            padding: 0.7rem 0.8rem;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+
+        .nav-link::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: var(--glass-bg);
+            backdrop-filter: blur(10px);
+            border-radius: 4px;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+
+        .nav-link:hover::before,
+        .nav-link.active::before {
+            opacity: 1;
+        }
+
+        .nav-link:hover,
+        .nav-link.active {
+            color: var(--accent-gold);
+            transform: translateY(-1px);
+        }
+
+        /* Menu Toggle */
+        .menu-toggle {
+            display: none;
+            flex-direction: column;
+            cursor: pointer;
+            padding: 0.5rem;
+            z-index: 1001;
+        }
+
+        .menu-bar {
+            width: 25px;
+            height: 2px;
+            background: var(--primary-black);
+            margin: 3px 0;
+            transition: 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            border-radius: 2px;
+        }
+
+        /* Page Content */
+        .page-content {
+            margin-top: 80px;
+            min-height: calc(100vh - 80px);
+        }
+
+        .page {
+            display: none;
+            opacity: 0;
+            animation: fadeIn 0.6s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+        }
+
+        .page.active {
+            display: block;
+        }
+
+        /* Hero Section */
+        .hero-section {
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            background: linear-gradient(135deg, var(--primary-white) 0%, var(--light-gray) 100%);
+            overflow: hidden;
+        }
+
+        .geometric-bg {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            overflow: hidden;
+        }
+
+        .shape {
+            position: absolute;
+            opacity: 0.08;
+            border: 1px solid var(--primary-black);
+        }
+
+        .shape:nth-child(1) {
+            top: 15%;
+            left: 8%;
+            width: 120px;
+            height: 120px;
+            transform: rotate(45deg);
+            animation: float 12s ease-in-out infinite;
+        }
+
+        .shape:nth-child(2) {
+            top: 60%;
+            right: 12%;
+            width: 80px;
+            height: 80px;
+            animation: float 8s ease-in-out infinite reverse;
+        }
+
+        .shape:nth-child(3) {
+            bottom: 25%;
+            left: 75%;
+            width: 200px;
+            height: 2px;
+            background: var(--primary-black);
+            animation: float 15s ease-in-out infinite;
+        }
+
+        .hero-content {
+            text-align: center;
+            max-width: 900px;
+            padding: 2rem;
+            animation: fadeInUp 1.2s cubic-bezier(0.4, 0, 0.2, 1);
+            position: relative;
+            z-index: 10;
+        }
+
+        .hero-title {
+            font-family: 'Playfair Display', serif;
+            font-size: clamp(5rem, 12vw, 10rem);
+            font-weight: 700;
+            margin-bottom: 1rem;
+            color: var(--primary-black);
+            letter-spacing: -4px;
+            position: relative;
+        }
+
+        .hero-title::after {
+            content: '';
+            position: absolute;
+            bottom: -15px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 0;
+            height: 3px;
+            background: var(--accent-gold);
+            animation: titleUnderline 2s ease-out 1.5s forwards;
+        }
+
+        .hero-subtitle {
+            font-family: 'Playfair Display', serif;
+            font-size: 2rem;
+            color: var(--accent-steel);
+            margin-bottom: 2.5rem;
+            font-weight: 400;
+            letter-spacing: 4px;
+            text-transform: uppercase;
+            font-style: italic;
+        }
+
+        .hero-description {
+            font-size: 1.2rem;
+            color: var(--medium-gray);
+            margin-bottom: 3rem;
+            line-height: 1.8;
+            max-width: 700px;
+            margin-left: auto;
+            margin-right: auto;
+            font-style: italic;
+        }
+
+        /* Sections */
+        .section {
+            padding: 8rem 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
+            position: relative;
+        }
+
+        .section-title {
+            font-family: 'Playfair Display', serif;
+            font-size: 4rem;
+            text-align: center;
+            margin-bottom: 2rem;
+            color: var(--primary-black);
+            position: relative;
+            letter-spacing: -2px;
+        }
+
+        .section-title::before {
+            content: '';
+            position: absolute;
+            top: -25px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80px;
+            height: 2px;
+            background: var(--accent-gold);
+        }
+
+        .section-quote {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.4rem;
+            font-style: italic;
+            text-align: center;
+            color: var(--accent-steel);
+            margin-bottom: 4rem;
+            max-width: 700px;
+            margin-left: auto;
+            margin-right: auto;
+            line-height: 1.6;
+        }
+
+        /* About Section */
+        .about-hero {
+            background: linear-gradient(135deg, var(--light-gray) 0%, var(--primary-white) 100%);
+            padding: 8rem 2rem;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        /* Projects Grid */
+        .projects-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 3rem;
+            margin-top: 4rem;
+        }
+
+        .project-card {
+            background: rgba(255, 255, 255, 0.9);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(224, 224, 224, 0.5);
+            padding: 3rem;
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            position: relative;
+            overflow: hidden;
+            box-shadow: var(--shadow-light);
+        }
+
+        .project-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 4px;
+            background: var(--accent-gold);
+            transform: scaleX(0);
+            transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .project-card:hover::before {
+            transform: scaleX(1);
+        }
+
+        .project-card:hover {
+            transform: translateY(-8px);
+            box-shadow: var(--shadow-medium);
+            border-color: rgba(184, 134, 11, 0.3);
+        }
+
+        .project-title {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.8rem;
+            margin-bottom: 1.5rem;
+            color: var(--primary-black);
+            position: relative;
+            z-index: 2;
+        }
+
+        .project-description {
+            color: var(--medium-gray);
+            margin-bottom: 1.5rem;
+            line-height: 1.7;
+            position: relative;
+            z-index: 2;
+        }
+
+        .project-period {
+            font-size: 0.9rem;
+            color: var(--accent-steel);
+            font-weight: 600;
+            margin-bottom: 1rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        /* Lab Section */
+        .lab-section {
+            background: linear-gradient(135deg, var(--light-gray) 0%, var(--primary-white) 100%);
+            padding: 8rem 2rem;
+        }
+
+        .lab-content {
+            max-width: 800px;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        .lab-description {
+            font-size: 1.2rem;
+            line-height: 1.8;
+            color: var(--medium-gray);
+            margin-bottom: 4rem;
+            font-style: italic;
+        }
+
+        /* Cognito Section */
+        .cognito-section {
+            padding: 8rem 2rem;
+            background: var(--primary-white);
+        }
+
+        .cognito-content {
+            max-width: 900px;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        .cognito-description {
+            font-size: 1.2rem;
+            line-height: 1.8;
+            color: var(--medium-gray);
+            margin-bottom: 3rem;
+        }
+
+        /* Armeria Section */
+        .armeria-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin: 4rem 0;
+        }
+
+        .tool-item {
+            text-align: center;
+            padding: 2rem;
+            background: rgba(248, 248, 248, 0.8);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(224, 224, 224, 0.3);
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .tool-item:hover {
+            transform: scale(1.02);
+            background: rgba(255, 255, 255, 0.95);
+            box-shadow: var(--shadow-light);
+        }
+
+        .tool-icon {
+            font-size: 2rem;
+            margin-bottom: 1rem;
+            color: var(--accent-gold);
+        }
+
+        .tool-name {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.2rem;
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+            color: var(--primary-black);
+        }
+
+        /* Camiones Section */
+        .camiones-section {
+            background: linear-gradient(135deg, var(--light-gray) 0%, var(--primary-white) 100%);
+            padding: 8rem 2rem;
+            position: relative;
+        }
+
+        .network-visual {
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            margin: 4rem 0;
+            position: relative;
+        }
+
+        .network-node {
+            width: 80px;
+            height: 80px;
+            background: var(--gradient-primary);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 1.5rem;
+            position: relative;
+        }
+
+        .network-line {
+            position: absolute;
+            height: 2px;
+            background: var(--accent-gold);
+            top: 50%;
+            width: calc(100% - 160px);
+            left: 80px;
+            z-index: -1;
+        }
+
+        /* Contact Form */
+        .contact-form {
+            max-width: 700px;
+            margin: 4rem auto;
+            background: rgba(248, 248, 248, 0.9);
+            backdrop-filter: blur(20px);
+            padding: 4rem;
+            border: 1px solid rgba(224, 224, 224, 0.3);
+            box-shadow: var(--shadow-light);
+        }
+
+        .form-group {
+            margin-bottom: 2rem;
+        }
+
+        .form-label {
+            display: block;
+            margin-bottom: 0.8rem;
+            font-weight: 600;
+            color: var(--primary-black);
+            font-size: 1rem;
+        }
+
+        .form-input,
+        .form-textarea {
+            width: 100%;
+            padding: 1.2rem 1.5rem;
+            border: 2px solid rgba(224, 224, 224, 0.5);
+            font-family: 'Inter', sans-serif;
+            font-size: 1rem;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            background: rgba(255, 255, 255, 0.8);
+            backdrop-filter: blur(10px);
+        }
+
+        .form-input:focus,
+        .form-textarea:focus {
+            outline: none;
+            border-color: var(--accent-gold);
+            box-shadow: 0 0 0 4px rgba(184, 134, 11, 0.1);
+            background: rgba(255, 255, 255, 0.95);
+        }
+
+        .submit-btn {
+            background: var(--gradient-primary);
+            color: var(--primary-white);
+            padding: 1.2rem 3rem;
+            border: none;
+            font-size: 1.1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            width: 100%;
+            position: relative;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(10, 10, 10, 0.2);
+        }
+
+        .submit-btn::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: var(--gradient-accent);
+            transition: left 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .submit-btn:hover::before {
+            left: 0;
+        }
+
+        .submit-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 15px 40px rgba(184, 134, 11, 0.3);
+        }
+
+        .submit-btn span {
+            position: relative;
+            z-index: 1;
+        }
+
+        /* Footer */
+        .footer {
+            background: var(--gradient-primary);
+            color: var(--primary-white);
+            text-align: center;
+            padding: 4rem 2rem;
+            position: relative;
+        }
+
+        /* Animations */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(40px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes float {
+            0%, 100% {
+                transform: translateY(0px) rotate(0deg);
+            }
+            50% {
+                transform: translateY(-15px) rotate(2deg);
+            }
+        }
+
+        @keyframes titleUnderline {
+            to {
+                width: 120px;
+            }
+        }
+
+        @keyframes fadeIn {
+            to {
+                opacity: 1;
+            }
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .nav-menu {
+                position: fixed;
+                left: -100%;
+                top: 80px;
+                flex-direction: column;
+                background: rgba(254, 254, 254, 0.98);
+                backdrop-filter: blur(20px);
+                width: 100%;
+                text-align: center;
+                transition: 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+                box-shadow: var(--shadow-light);
+                padding: 2rem 0;
+                height: calc(100vh - 80px);
+                overflow-y: auto;
+            }
+
+            .nav-menu.active {
+                left: 0;
+            }
+
+            .menu-toggle {
+                display: flex;
+            }
+
+            .nav-menu.active ~ .menu-toggle .menu-bar:nth-child(1) {
+                transform: rotate(-45deg) translate(-8px, 6px);
+            }
+
+            .nav-menu.active ~ .menu-toggle .menu-bar:nth-child(2) {
+                opacity: 0;
+            }
+
+            .nav-menu.active ~ .menu-toggle .menu-bar:nth-child(3) {
+                transform: rotate(45deg) translate(-8px, -6px);
+            }
+
+            .hero-title {
+                font-size: 4rem;
+            }
+
+            .hero-subtitle {
+                font-size: 1.5rem;
+            }
+
+            .section {
+                padding: 4rem 1rem;
+            }
+
+            .section-title {
+                font-size: 2.5rem;
+            }
+
+            .projects-grid,
+            .armeria-grid {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+
+            .contact-form {
+                padding: 2rem;
+                margin: 2rem 1rem;
+            }
+
+            .network-visual {
+                flex-direction: column;
+                gap: 2rem;
+            }
+
+            .network-line {
+                width: 2px;
+                height: calc(100% - 160px);
+                top: 80px;
+                left: 50%;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .navbar {
+                padding: 1rem;
+            }
+
+            .brand {
+                font-size: 1.5rem;
+            }
+
+            .hero-title {
+                font-size: 3rem;
+                letter-spacing: -2px;
+            }
+
+            .hero-subtitle {
+                font-size: 1.2rem;
+                letter-spacing: 2px;
+            }
+
+            .section-title {
+                font-size: 2rem;
+            }
+
+            .project-card,
+            .tool-item {
+                padding: 2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="nav-container" id="navbar">
+        <div class="navbar">
+            <div class="logo-container">
+                <a href="#" class="brand" onclick="showPage('home')">Mul</a>
+            </div>
+            <ul class="nav-menu" id="nav-menu">
+                <li class="nav-item">
+                    <a href="#" class="nav-link active" onclick="showPage('home')">Inicio</a>
+                </li>
+                <li class="nav-item">
+                    <a href="#" class="nav-link" onclick="showPage('about')">Sobre Mul</a>
+                </li>
+                <li class="nav-item">
+                    <a href="#" class="nav-link" onclick="showPage('projects')">Proyectos</a>
+                </li>
+                <li class="nav-item">
+                    <a href="#" class="nav-link" onclick="showPage('lab')">Laboratorio</a>
+                </li>
+                <li class="nav-item">
+                    <a href="#" class="nav-link" onclick="showPage('cognito')">Cognito</a>
+                </li>
+                <li class="nav-item">
+                    <a href="#" class="nav-link" onclick="showPage('armeria')">Armería</a>
+                </li>
+                <li class="nav-item">
+                    <a href="#" class="nav-link" onclick="showPage('camiones')">Camiones</a>
+                </li>
+                <li class="nav-item">
+                    <a href="#" class="nav-link" onclick="showPage('contact')">Contacto</a>
+                </li>
+            </ul>
+            <div class="menu-toggle" id="mobile-menu">
+                <span class="menu-bar"></span>
+                <span class="menu-bar"></span>
+                <span class="menu-bar"></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Page Content -->
+    <div class="page-content">
+        <!-- Home Page -->
+        <div id="home" class="page active">
+            <section class="hero-section">
+                <div class="geometric-bg">
+                    <div class="shape"></div>
+                    <div class="shape"></div>
+                    <div class="shape"></div>
+                </div>
+                <div class="hero-content">
+                    <h1 class="hero-title">Mul</h1>
+                    <p class="hero-subtitle">Reality Architect</p>
+                    <p class="hero-description">
+                        Un lugar privado, solo Mul lo entendería.
+                    </p>
+                </div>
+            </section>
+        </div>
+
+        <!-- About Page -->
+        <div id="about" class="page">
+            <section class="about-hero">
+                <h1 class="section-title">Sobre Mul</h1>
+                <p class="section-quote">
+                    "La realidad no es un destino, es un material. Como arquitecto de realidades, 
+                    moldeo mundos donde lo imposible encuentra su lugar en lo cotidiano."
+                </p>
+            </section>
+
+            <section class="section">
+                <div style="background: rgba(248, 248, 248, 0.6); backdrop-filter: blur(10px); padding: 4rem; margin: 4rem 0; border: 1px solid rgba(224, 224, 224, 0.3);">
+                    <h2 style="font-family: 'Playfair Display', serif; font-size: 2.5rem; text-align: center; margin-bottom: 2rem; color: var(--primary-black);">Filosofía</h2>
+                    <p style="font-size: 1.2rem; line-height: 1.8; color: var(--medium-gray); text-align: center; max-width: 800px; margin: 0 auto 2rem;">
+                        Ser un Reality Architect significa entender que cada realidad es una construcción deliberada. 
+                        Mi trabajo no es solo diseñar interfaces o sistemas, sino arquitecturar experiencias completas 
+                        que honren la sabiduría del pasado mientras abrazan las posibilidades del futuro.
+                    </p>
+                    <p style="font-size: 1.2rem; line-height: 1.8; color: var(--medium-gray); text-align: center; max-width: 800px; margin: 0 auto;">
+                        En cada proyecto, busco ese equilibrio perfecto entre lo tradicional y lo disruptivo, 
+                        donde la tecnología sirve a propósitos humanos fundamentales y cada innovación 
+                        se ancla en valores atemporales.
+                    </p>
+                </div>
+            </section>
+        </div>
+
+        <!-- Projects Page -->
+        <div id="projects" class="page">
+            <section class="section">
+                <h1 class="section-title">Proyectos</h1>
+                <p class="section-quote">
+                    "Cada proyecto es un mundo que construir, una realidad que arquitecturar con precisión y visión."
+                </p>
+                <div class="projects-grid">
+                    <div class="project-card">
+                        <div class="project-period">2023 - Presente</div>
+                        <h3 class="project-title">Zeven Global</h3>
+                        <p class="project-description">
+                            Plataforma global de trading con énfasis en estrategias innovadoras y alcance mundial, 
+                            brindando herramientas financieras de punta que democratizan el acceso a mercados 
+                            internacionales con tecnología de vanguardia.
+                        </p>
+                        <div style="color: var(--accent-gold); font-weight: 600; font-size: 0.9rem; text-transform: uppercase;">
+                            Fintech • Trading • Estrategia Global
+                        </div>
+                    </div>
+                    
+                    <div class="project-card">
+                        <div class="project-period">2022 - Presente</div>
+                        <h3 class="project-title">American Freight Movers</h3>
+                        <p class="project-description">
+                            Red logística de transporte de carga que reinventa el traslado de mercancías, 
+                            integrando tecnología y eficiencia en las rutas. Infraestructura física que 
+                            conecta ideas con destinos tangibles.
+                        </p>
+                        <div style="color: var(--accent-gold); font-weight: 600; font-size: 0.9rem; text-transform: uppercase;">
+                            Logística • Transporte • Infraestructura
+                        </div>
+                    </div>
+                    
+                    <div class="project-card">
+                        <div class="project-period">2023 - Desarrollo</div>
+                        <h3 class="project-title">Cognito IA</h3>
+                        <p class="project-description">
+                            Laboratorio de IA que potencia el pensamiento estratégico y el diseño de conceptos 
+                            innovadores mediante inteligencia artificial. Donde la cognición humana se expande 
+                            a través de sistemas inteligentes.
+                        </p>
+                        <div style="color: var(--accent-gold); font-weight: 600; font-size: 0.9rem; text-transform: uppercase;">
+                            IA • Cognición • Diseño Conceptual
+                        </div>
+                    </div>
+                    
+                    <div class="project-card">
+                        <div class="project-period">2024 - Activo</div>
+                        <h3 class="project-title">Innova - Escuela de Emprendimiento</h3>
+                        <p class="project-description">
+                            Escuela de emprendimiento que forja líderes visionarios, uniendo sabiduría tradicional 
+                            con innovaciones disruptivas en cada aprendizaje. Donde se cultivan los arquitectos 
+                            de realidades del mañana.
+                        </p>
+                        <div style="color: var(--accent-gold); font-weight: 600; font-size: 0.9rem; text-transform: uppercase;">
+                            Educación • Liderazgo • Emprendimiento
+                        </div>
+                    </div>
+                    
+                    <div class="project-card">
+                        <div class="project-period">Filosofía Personal</div>
+                        <h3 class="project-title">Mul: Receta Baja Energía</h3>
+                        <p class="project-description">
+                            Una filosofía de vida de baja energía: nutrición consciente, práctica filosófica 
+                            y alto rendimiento sostenible, para vivir con calma y claridad. El arte de hacer 
+                            más con menos, mejor con simpleza.
+                        </p>
+                        <div style="color: var(--accent-gold); font-weight: 600; font-size: 0.9rem; text-transform: uppercase;">
+                            Filosofía • Lifestyle • Sostenibilidad
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+
+        <!-- Lab Page -->
+        <div id="lab" class="page">
+            <section class="lab-section">
+                <div class="lab-content">
+                    <h1 class="section-title">El Laboratorio</h1>
+                    <p class="section-quote">
+                        "Aquí las ideas toman forma antes de convertirse en realidad. 
+                        El laboratorio es donde lo imposible ensaya su primer acto."
+                    </p>
+                    <p class="lab-description">
+                        El Laboratorio es el espacio sagrado de la experimentación, donde cada concepto 
+                        se prueba, refina y perfecciona antes de emerger al mundo. Es el terreno de pruebas 
+                        donde las visiones futuristas encuentran su viabilidad práctica, donde la tradición 
+                        y la innovación dialogan en prototipos que anticipan el mañana.
+                    </p>
+                    <p class="lab-description">
+                        Aquí no existen fracasos, solo iteraciones. Cada experimento es un paso hacia 
+                        la materialización de realidades más ricas, más humanas, más significativas. 
+                        Es donde la arquitectura conceptual se convierte en blueprints tangibles.
+                    </p>
+                </div>
+            </section>
+        </div>
+
+        <!-- Cognito Page -->
+        <div id="cognito" class="page">
+            <section class="cognito-section">
+                <div class="cognito-content">
+                    <h1 class="section-title">Cognito</h1>
+                    <p class="section-quote">
+                        "En Cognito exploramos los patrones del pensamiento, 
+                        donde la mente humana y la inteligencia artificial convergen."
+                    </p>
+                    <p class="cognito-description">
+                        Cognito representa el núcleo filosófico y cognitivo del universo Mul. Aquí se exploran 
+                        los sistemas de pensamiento, los patrones mentales y las arquitecturas cognitivas 
+                        que sustentan toda creación de realidades. Es donde la inteligencia artificial 
+                        se encuentra con la sabiduría humana ancestral.
+                    </p>
+                    <p class="cognito-description">
+                        En este espacio, desarrollamos modelos de pensamiento que amplifican la capacidad 
+                        humana de diseñar realidades. La IA no reemplaza la intuición, la potencia. 
+                        No elimina la creatividad, la cataliza. Cognito es el cerebro que alimenta 
+                        cada proyecto, cada visión, cada realidad arquitecturada.
+                    </p>
+                </div>
+            </section>
+        </div>
+
+        <!-- Armeria Page -->
+        <div id="armeria" class="page">
+            <section class="section">
+                <h1 class="section-title">La Armería</h1>
+                <p class="section-quote">
+                    "Como todo artesano maestro, un Reality Architect necesita sus herramientas. 
+                    Aquí residen los instrumentos que dan forma a las visiones."
+                </p>
+                
+                <div class="armeria-grid">
+                    <div class="tool-item">
+                        <div class="tool-icon">🧠</div>
+                        <h3 class="tool-name">Design Thinking</h3>
+                        <p style="color: var(--medium-gray); font-size: 0.9rem;">Metodología centrada en el usuario para resolver problemas complejos.</p>
+                    </div>
+                    
+                    <div class="tool-item">
+                        <div class="tool-icon">🤖</div>
+                        <h3 class="tool-name">Algoritmos de IA</h3>
+                        <p style="color: var(--medium-gray); font-size: 0.9rem;">Inteligencia artificial aplicada al diseño y optimización de sistemas.</p>
+                    </div>
+                    
+                    <div class="tool-item">
+                        <div class="tool-icon">🏗️</div>
+                        <h3 class="tool-name">Arquitectura Conceptual</h3>
+                        <p style="color: var(--medium-gray); font-size: 0.9rem;">Frameworks de pensamiento para estructurar realidades complejas.</p>
+                    </div>
+                    
+                    <div class="tool-item">
+                        <div class="tool-icon">📐</div>
+                        <h3 class="tool-name">Prototipado Ágil</h3>
+                        <p style="color: var(--medium-gray); font-size: 0.9rem;">Metodologías rápidas para materializar y probar conceptos.</p>
+                    </div>
+                    
+                    <div class="tool-item">
+                        <div class="tool-icon">🎯</div>
+                        <h3 class="tool-name">Estrategia Sistémica</h3>
+                        <p style="color: var(--medium-gray); font-size: 0.9rem;">Pensamiento holístico para optimizar ecosistemas completos.</p>
+                    </div>
+                    
+                    <div class="tool-item">
+                        <div class="tool-icon">⚖️</div>
+                        <h3 class="tool-name">Filosofía Clásica</h3>
+                        <p style="color: var(--medium-gray); font-size: 0.9rem;">Sabiduría ancestral aplicada a desafíos contemporáneos.</p>
+                    </div>
+                </div>
+                
+                <div style="background: rgba(248, 248, 248, 0.6); backdrop-filter: blur(10px); padding: 3rem; margin: 4rem 0; border: 1px solid rgba(224, 224, 224, 0.3); text-align: center;">
+                    <p style="font-size: 1.1rem; line-height: 1.7; color: var(--medium-gray); font-style: italic;">
+                        Cada herramienta en la Armería ha sido seleccionada y refinada a través de años de práctica. 
+                        No se trata solo de tecnologías o metodologías, sino de extensiones del pensamiento 
+                        que permiten esculpir realidades con precisión artesanal y visión futurista.
+                    </p>
+                </div>
+            </section>
+        </div>
+
+        <!-- Camiones Page -->
+        <div id="camiones" class="page">
+            <section class="camiones-section">
+                <div style="max-width: 1000px; margin: 0 auto; text-align: center;">
+                    <h1 class="section-title">Camiones</h1>
+                    <p class="section-quote">
+                        "Las ideas necesitan rutas, los conceptos requieren transporte. 
+                        Los camiones mueven tanto carga física como visiones conceptuales."
+                    </p>
+                    
+                    <div class="network-visual">
+                        <div class="network-node">💡</div>
+                        <div class="network-node">🚛</div>
+                        <div class="network-node">🎯</div>
+                        <div class="network-line"></div>
+                    </div>
+                    
+                    <p style="font-size: 1.2rem; line-height: 1.8; color: var(--medium-gray); margin-bottom: 3rem; max-width: 800px; margin-left: auto; margin-right: auto;">
+                        La red de Camiones representa la infraestructura móvil de Mul: tanto la logística física 
+                        que conecta mercados a través de American Freight Movers, como la red conceptual que 
+                        transporta ideas desde su concepción hasta su implementación en el mundo real.
+                    </p>
+                    
+                    <p style="font-size: 1.2rem; line-height: 1.8; color: var(--medium-gray); max-width: 800px; margin-left: auto; margin-right: auto;">
+                        Cada camión es una metáfora de movimiento: llevamos proyectos desde el Laboratorio 
+                        hasta su destino final, transportamos conocimiento desde Innova hacia nuevos líderes, 
+                        y movilizamos recursos desde Zeven hacia oportunidades globales. La logística no es 
+                        solo transporte, es arquitectura en movimiento.
+                    </p>
+                </div>
+            </section>
+        </div>
+
+        <!-- Contact Page -->
+        <div id="contact" class="page">
+            <section class="section">
+                <h1 class="section-title">Contacto</h1>
+                <p class="section-quote">
+                    "¿Tienes una realidad en mente que necesita arquitectura? 
+                    Conversemos sobre cómo darle forma al futuro."
+                </p>
+                
+                <form class="contact-form" onsubmit="handleSubmit(event)">
+                    <div class="form-group">
+                        <label for="name" class="form-label">Nombre</label>
+                        <input type="text" id="name" name="name" class="form-input" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="email" class="form-label">Email</label>
+                        <input type="email" id="email" name="email" class="form-input" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="project" class="form-label">Tipo de Proyecto</label>
+                        <input type="text" id="project" name="project" class="form-input" placeholder="Fintech, Logística, IA, Educación, Filosofía...">
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="message" class="form-label">Mensaje</label>
+                        <textarea id="message" name="message" class="form-textarea" rows="6" placeholder="Cuéntame sobre tu visión, tu proyecto, tu realidad por construir..." required></textarea>
+                    </div>
+                    
+                    <button type="submit" class="submit-btn">
+                        <span>Iniciar Conversación</span>
+                    </button>
+                </form>
+
+                <div style="text-align: center; margin-top: 4rem; padding: 3rem; background: rgba(248, 248, 248, 0.6); backdrop-filter: blur(10px); border: 1px solid rgba(224, 224, 224, 0.3);">
+                    <h3 style="font-family: 'Playfair Display', serif; font-size: 1.8rem; margin-bottom: 2rem; color: var(--primary-black);">Conecta con el Ecosistema</h3>
+                    <div style="display: flex; justify-content: center; gap: 2rem; flex-wrap: wrap;">
+                        <a href="#" style="color: var(--accent-gold); text-decoration: none; font-weight: 600; transition: all 0.3s ease; display: flex; align-items: center; gap: 0.5rem;">
+                            📊 Zeven Global
+                        </a>
+                        <a href="#" style="color: var(--accent-gold); text-decoration: none; font-weight: 600; transition: all 0.3s ease; display: flex; align-items: center; gap: 0.5rem;">
+                            🚛 American Freight
+                        </a>
+                        <a href="#" style="color: var(--accent-gold); text-decoration: none; font-weight: 600; transition: all 0.3s ease; display: flex; align-items: center; gap: 0.5rem;">
+                            🧠 Cognito IA
+                        </a>
+                        <a href="#" style="color: var(--accent-gold); text-decoration: none; font-weight: 600; transition: all 0.3s ease; display: flex; align-items: center; gap: 0.5rem;">
+                            🎓 Innova Escuela
+                        </a>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <p style="margin-bottom: 1rem; position: relative; z-index: 2; font-style: italic;">
+            "Donde cada realidad encuentra su arquitecto, y cada visión su forma tangible."
+        </p>
+        <p style="color: rgba(255, 255, 255, 0.7); font-size: 0.9rem; position: relative; z-index: 2;">
+            © 2025 Mul - Reality Architect. Construyendo futuros desde la tradición.
+        </p>
+    </footer>
+
+    <script>
+        // Navigation functionality
+        function showPage(pageId) {
+            // Hide all pages
+            const pages = document.querySelectorAll('.page');
+            pages.forEach(page => {
+                page.classList.remove('active');
+            });
+
+            // Show selected page
+            const targetPage = document.getElementById(pageId);
+            if (targetPage) {
+                targetPage.classList.add('active');
+            }
+
+            // Update active nav link
+            const navLinks = document.querySelectorAll('.nav-link');
+            navLinks.forEach(link => {
+                link.classList.remove('active');
+            });
+
+            // Find and activate the corresponding nav link
+            const navLinkTexts = {
+                'home': 'Inicio',
+                'about': 'Sobre Mul',
+                'projects': 'Proyectos',
+                'lab': 'Laboratorio',
+                'cognito': 'Cognito',
+                'armeria': 'Armería',
+                'camiones': 'Camiones',
+                'contact': 'Contacto'
+            };
+
+            navLinks.forEach(link => {
+                if (link.textContent === navLinkTexts[pageId]) {
+                    link.classList.add('active');
+                }
+            });
+
+            // Close mobile menu if open
+            const navMenu = document.getElementById('nav-menu');
+            navMenu.classList.remove('active');
+
+            // Scroll to top
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+
+        // Mobile menu toggle
+        const mobileMenu = document.getElementById('mobile-menu');
+        const navMenu = document.getElementById('nav-menu');
+
+        mobileMenu.addEventListener('click', () => {
+            navMenu.classList.toggle('active');
+        });
+
+        // Close mobile menu when clicking on a link
+        const navLinks = document.querySelectorAll('.nav-link');
+        navLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                navMenu.classList.remove('active');
+            });
+        });
+
+        // Navbar scroll effect
+        window.addEventListener('scroll', () => {
+            const navbar = document.getElementById('navbar');
+            if (window.scrollY > 50) {
+                navbar.classList.add('scrolled');
+            } else {
+                navbar.classList.remove('scrolled');
+            }
+        });
+
+        // Contact form handler
+        function handleSubmit(event) {
+            event.preventDefault();
+            
+            const form = event.target;
+            const formData = new FormData(form);
+            
+            const name = formData.get('name');
+            const email = formData.get('email');
+            const message = formData.get('message');
+            
+            if (name && email && message) {
+                const submitBtn = form.querySelector('.submit-btn');
+                const originalText = submitBtn.querySelector('span').textContent;
+                
+                submitBtn.querySelector('span').textContent = 'Enviando mensaje...';
+                submitBtn.disabled = true;
+                
+                setTimeout(() => {
+                    submitBtn.querySelector('span').textContent = '¡Mensaje Enviado con Éxito!';
+                    form.reset();
+                    
+                    setTimeout(() => {
+                        submitBtn.querySelector('span').textContent = originalText;
+                        submitBtn.disabled = false;
+                    }, 3000);
+                }, 1500);
+            }
+        }
+
+        // Initialize page
+        document.addEventListener('DOMContentLoaded', () => {
+            showPage('home');
+            
+            // Enhanced scroll animations
+            const observerOptions = {
+                threshold: 0.1,
+                rootMargin: '0px 0px -50px 0px'
+            };
+
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.style.opacity = '1';
+                        entry.target.style.transform = 'translateY(0)';
+                    }
+                });
+            }, observerOptions);
+
+            // Observe elements for animation
+            const animatedElements = document.querySelectorAll('.project-card, .tool-item');
+            animatedElements.forEach(el => {
+                el.style.opacity = '0';
+                el.style.transform = 'translateY(20px)';
+                el.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+                observer.observe(el);
+            });
+        });
+    </script>
+</body>
+</html>
